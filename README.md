@@ -6,5 +6,6 @@ Uses animated weather icons from CodePen.
 Animated icons:<br/>
 https://codepen.io/fbrz/pen/iqtlk<br/>
 Static Icons:<br/>
-http://www.alessioatzeni.com/meteocons/res/img/screen.png<br/>
+http://www.alessioatzeni.com/meteocons/res/img/screen.png
+<br/><br/>
 Uses <a href="http://simpleweatherjs.com/">Simple Weather</a> API
