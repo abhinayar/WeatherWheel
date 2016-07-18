@@ -1,5 +1,5 @@
 $(function(){
-    $("app-bg").removeClass("hidden");
+    $(".app-bg").removeClass("hidden");
     $(".app-bg").hide();
 });
 
