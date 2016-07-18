@@ -126,6 +126,7 @@ $(document).ready(function(){
                 
                 getFlickrBG(curr_loc);
                 $(".loader").hide().addClass("hidden");
+                $(".app-bg").removeClass("hidden");
                 $(".app-bg").fadeIn(1500)
                 
                 $(".curr-city").html(curr_loc);
