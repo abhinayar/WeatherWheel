@@ -1,0 +1,155 @@
+<html lang="en">
+    <head>
+        <!-- External CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="icons.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900' rel='stylesheet' type='text/css'>
+        <!-- Internal CSS -->
+        <link rel="stylesheet" href="weather.css">
+        
+        <title>Weather App - By Abhi Nayar</title>
+    </head>
+    <body>
+        <div class="full-bg">
+            <div class="loader">
+                <svg width='100px' height='100px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-gps"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><circle cx="50" cy="50" r="20" fill="#3c302e"><animate attributeName="opacity" from="1" to="1" dur="1s" repeatCount="indefinite" values="1;1;0;0;1" keyTimes="0;0.4;0.5;0.9;1"></animate></circle><path d="M90,45h-1.3C86.4,27.5,72.5,13.6,55,11.3V10c0-2.8-2.2-5-5-5s-5,2.2-5,5v1.3C27.5,13.6,13.6,27.5,11.3,45H10 c-2.8,0-5,2.2-5,5s2.2,5,5,5h1.3C13.6,72.5,27.5,86.4,45,88.7V90c0,2.8,2.2,5,5,5s5-2.2,5-5v-1.3C72.5,86.4,86.4,72.5,88.7,55H90 c2.8,0,5-2.2,5-5S92.8,45,90,45z M55,80.6V80c0-2.8-2.2-5-5-5s-5,2.2-5,5v0.6C31.9,78.5,21.5,68.1,19.4,55H20c2.8,0,5-2.2,5-5 s-2.2-5-5-5h-0.6C21.5,31.9,31.9,21.5,45,19.4V20c0,2.8,2.2,5,5,5s5-2.2,5-5v-0.6C68.1,21.5,78.5,31.9,80.6,45H80c-2.8,0-5,2.2-5,5 s2.2,5,5,5h0.6C78.5,68.1,68.1,78.5,55,80.6z" fill="#cec9c9"><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="90 50 50" dur="1s" repeatCount="indefinite" values="0 50 50;90 50 50;90 50 50" keyTimes="0;0.5;1"></animateTransform></path></svg>
+            </div>
+            <div class="app-bg night">
+                <div class="dark-cover"></div>
+                <div class="rotate-wheel right">
+                    <i class="fa fa-arrow-down"></i>
+                </div>
+                <div class="change-units-container">
+                    <div class="unit curr-units active">&deg;<span class="curr-temp-unit-letter">F</span></div>
+                    <div class="unit alt-units">&deg;<span class="other-temp-unit-letter">C</span></div>
+                </div>
+                <div class="curr-weather">
+                    <div class="curr-cond bold">
+                        <h2><br/><span class="curr-cond-desc"></span></h2>
+                    </div>
+                    <div class="curr-loc">
+                        <p><span class="curr-city"></span>, <span class="curr-region"></span></p>
+                    </div>
+                    <div class="curr-temp bold">
+                        <h1><span class="curr-temp-value curr"></span><span class="curr-alt-temp-value hidden alt"></span>&deg;</h1>
+                    </div>
+                </div>
+                <div class="weather-icon">
+                    <div class=""></div>
+                </div>
+                <div class="forecast-center-wheel">
+                </div>
+                <div class="forecast-inner-wheel-1"></div>
+                <div class="forecast-inner-wheel-2"></div>
+                <ul class="forecast-wheel" data-rot="-30">
+                    <li class="forecast-slice">
+                        <div class="forecast-slice-content active today">
+                            <div class="day">
+                                <p>Today</p>
+                            </div>
+                            <div class="today-info">
+                                <div class="high-low info">
+                                    <div class="high-low-temp"><span class="today-high curr"></span><span class="today-alt-high hidden alt"></span>&deg; / <span class="today-low curr"></span><span class="today-alt-low hidden alt"></span>&deg;</div>
+                                <div class="sunrise-sunset info">
+                                    <img src="images/sunrise-sunset.png" class="sunrise-sunset-image"/>
+                                    <div class="sun-times"><span class="sunrise-time"></span><span class="small-text">AM</span> / <span class="sunset-time"></span><span class="small-text">PM</span></div>
+                                </div>
+                                <div class="wind-info info">
+                                    <img src="images/wind_night.png" class="wind-image"/>
+                                    <div class="wind-speed"><span class="wind-speed-val"></span>mph <span class="wind-dir small-text"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="forecast-slice right day_1">
+                        <div class="forecast-slice-content">
+                            <div class="day">
+                                <p></p>
+                            </div>
+                            <div class="day-info">
+                                <img src="" class="day_1_image"/>
+                                <div class="day-high-low">
+                                    <span class="high curr"></span><span class="alt-high alt hidden"></span>&deg; / <span class="low curr"></span><span class="alt-low alt hidden"></span>&deg;
+                                </div>
+                                <div class="day-weather">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="forecast-slice day_2">
+                        <div class="forecast-slice-content">
+                            <div class="day">
+                                <p></p>
+                            </div>
+                            <div class="day-info">
+                                <img src="" class="day_2_image"/>
+                                <div class="day-high-low">
+                                    <span class="high curr"></span><span class="alt-high alt hidden"></span>&deg; / <span class="low curr"></span><span class="alt-low alt hidden"></span>&deg;
+                                </div>
+                                <div class="day-weather">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="forecast-slice day_3">
+                        <div class="forecast-slice-content">
+                            <div class="day">
+                                <p></p>
+                            </div>
+                            <div class="day-info">
+                                <img src="" class="day_3_image"/>
+                                <div class="day-high-low">
+                                    <span class="high curr"></span><span class="alt-high alt hidden"></span>&deg; / <span class="low curr"></span><span class="alt-low alt hidden"></span>&deg;
+                                </div>
+                                <div class="day-weather">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="forecast-slice day_4">
+                        <div class="forecast-slice-content">
+                            <div class="day">
+                                <p></p>
+                            </div>
+                            <div class="day-info">
+                                <img src="" class="day_4_image"/>
+                                <div class="day-high-low">
+                                    <span class="high curr"></span><span class="alt-high alt hidden"></span>&deg; / <span class="low curr"></span><span class="alt-low alt hidden"></span>&deg;
+                                </div>
+                                <div class="day-weather">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="forecast-slice left day_5">
+                        <div class="forecast-slice-content">
+                            <div class="day">
+                                <p></p>
+                            </div>
+                            <div class="day-info">
+                                <img src="" class="day_5_image"/>
+                                <div class="day-high-low">
+                                    <span class="high curr"></span><span class="alt-high alt hidden"></span>&deg; / <span class="low curr"></span><span class="alt-low alt hidden"></span>&deg;
+                                </div>
+                                <div class="day-weather">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="weather"></div>
+        </div>
+        <!-- JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>-->
+        <script src="simpleWeather.js"></script>
+        <script src="weather.js"></script>
+    </body>
+</html>
