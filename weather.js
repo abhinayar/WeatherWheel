@@ -9,6 +9,11 @@ $(document).ready(function(){
       return array.indexOf(value) > -1;
     }
     
+    function randomInt(min,max)
+    {
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+    
     function getForecastImageSource(code, isSmallImage) {                    
         var sunny_codes = [32,34,36];
         var cloudy_codes = [19,20,21,22,23,24,26,27,28,29,30,44];
@@ -222,7 +227,8 @@ $(document).ready(function(){
         console.log(query);
         
         $.getJSON(query, function(data){ 
-            var item = data.photos.photo[0];
+            var randomIndex = randomInt(0,5);
+            var item = data.photos.photo[randomIndex];
             //create url of ACTUAL PHOTO from returned json
             var flickr_src = "https://farm" + item.farm + ".static.flickr.com/" + item.server
             + "/" + item.id + "_" + item.secret + "_b.jpg"; //create source, _b indicates large, _s  small, _m thumb
