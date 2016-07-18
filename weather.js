@@ -174,6 +174,22 @@ $(document).ready(function(){
     
                     var imageSource = getForecastImageSource(weather.forecast[i].code, true);
                     $(".day_" + i + " .day_" + i + "_image").attr("src", "images/" + imageSource);
+                    
+                    
+                    /* SPEAK WEATHER FUNCTION */
+                    $(".speak-weather").unbind().click(function(){
+                        var speechWeatherSummary = "Today: " + weather.currently + " currently. The temperature is " + weather.temp + " degrees with a high of " + weather.high + " and a low of " + weather.low + " degrees Fahrenheit. Wind speed is " + weather.wind.speed + "miles per hour, with a visibility of " + weather.visibility + "miles.";
+                        
+                        function speakIconAddActive() {
+                            $(".speak-weather i").addClass("active");
+                        }
+                        function speakIconRemoveActive() {
+                            $(".speak-weather i").removeClass("active");
+                        }
+                        
+                        responsiveVoice.speak(speechWeatherSummary, "UK English Female", {onstart: speakIconAddActive, onend: speakIconRemoveActive, rvTotal: 1});
+                    });
+                   
                 }
             },
             error: function(error) {

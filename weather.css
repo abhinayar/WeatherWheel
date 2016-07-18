@@ -331,6 +331,30 @@ li.forecast-slice:nth-child(7) {
     color: rgba(255,255,255,0.2);
 }
 
+.speak-weather {
+    position: absolute;
+    left: 15px;
+    background: #111;
+    width: 38px;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.speak-weather i {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.speak-weather i.active {
+    color: #B452CD;
+}
+
 .curr-units {
     border-bottom: 1px solid #999;
     font-weight: 100 !important;
