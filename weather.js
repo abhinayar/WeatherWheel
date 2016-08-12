@@ -123,9 +123,9 @@ $(document).ready(function(){
                 var today_low = weather.low;
                 var today_alt_low = weather.alt.low;
                 var today_sunrise = weather.sunrise;
-                today_sunrise = today_sunrise.substring(0, today_sunrise.length - 2);
+                today_sunrise = today_sunrise.substring(0, today_sunrise.length - 3);
                 var today_sunset = weather.sunset;
-                today_sunset = today_sunset.substring(0, today_sunset.length - 2);
+                today_sunset = today_sunset.substring(0, today_sunset.length - 3);
                 var curr_wind = weather.wind.speed;
                 var curr_wind_direction = weather.wind.direction;
                 
